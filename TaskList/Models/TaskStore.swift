@@ -43,26 +43,25 @@ class TaskStore: ObservableObject {
             priority: .high,
             names: [
                 "Finish Ray Wenderlich iOS course",
-                "Finish Linear Algebra Coursera course"
+                "Finish Linear Algebra course"
             ]
         ),
         PrioritizedTasks(
             priority: .medium,
             names: [
-                "Interview prep",
-                "Begin Udemy iOS Bootcamp"
+                "Interview prep"
             ]
         ),
         PrioritizedTasks(
             priority: .low,
             names: [
-                "Read"
+                 "Begin Udemy course"
             ]
         ),
         PrioritizedTasks(
             priority: .no,
             names: [
-                "Poop"
+                "Read"
             ]
         )
         
