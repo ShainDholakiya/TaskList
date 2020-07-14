@@ -24,6 +24,10 @@
 		3752C8A8238B5EFC003F16B7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752C8A7238B5EFC003F16B7 /* Task.swift */; };
 		3752C8AB238B5F85003F16B7 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752C8AA238B5F85003F16B7 /* TaskStore.swift */; };
 		3752C8B0238CDC84003F16B7 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3752C8AF238CDC84003F16B7 /* NewTaskView.swift */; };
+		377EF4BF24BCBCC7008DBBB5 /* Task.json in Resources */ = {isa = PBXBuildFile; fileRef = 377EF4BE24BCBCC6008DBBB5 /* Task.json */; };
+		377EF4C124BCBCCB008DBBB5 /* PrioritizedTask.json in Resources */ = {isa = PBXBuildFile; fileRef = 377EF4C024BCBCCB008DBBB5 /* PrioritizedTask.json */; };
+		377EF4C324BDEF47008DBBB5 /* Tasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 377EF4C224BDEF47008DBBB5 /* Tasks.json */; };
+		377EF4C524BDEF50008DBBB5 /* PrioritizedTasks.json in Resources */ = {isa = PBXBuildFile; fileRef = 377EF4C424BDEF50008DBBB5 /* PrioritizedTasks.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		3752C8A7238B5EFC003F16B7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3752C8AA238B5F85003F16B7 /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		3752C8AF238CDC84003F16B7 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		377EF4BE24BCBCC6008DBBB5 /* Task.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Task.json; sourceTree = "<group>"; };
+		377EF4C024BCBCCB008DBBB5 /* PrioritizedTask.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PrioritizedTask.json; sourceTree = "<group>"; };
+		377EF4C224BDEF47008DBBB5 /* Tasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Tasks.json; sourceTree = "<group>"; };
+		377EF4C424BDEF50008DBBB5 /* PrioritizedTasks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PrioritizedTasks.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +100,8 @@
 				3752C893238B5BBD003F16B7 /* AppDelegate.swift */,
 				3752C895238B5BBD003F16B7 /* SceneDelegate.swift */,
 				3752C8AE238CDBAE003F16B7 /* Views */,
-				3752C899238B5BBF003F16B7 /* Assets.xcassets */,
 				3752C8A9238B5F3D003F16B7 /* Models */,
+				377EF4BD24BCBCBF008DBBB5 /* Resources */,
 				3752C89E238B5BBF003F16B7 /* LaunchScreen.storyboard */,
 				3752C8A1238B5BBF003F16B7 /* Info.plist */,
 				3752C89B238B5BBF003F16B7 /* Preview Content */,
@@ -130,6 +138,18 @@
 				374A2C5E23A2EA6500FB3E44 /* TaskEditingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		377EF4BD24BCBCBF008DBBB5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				377EF4C224BDEF47008DBBB5 /* Tasks.json */,
+				377EF4C424BDEF50008DBBB5 /* PrioritizedTasks.json */,
+				377EF4BE24BCBCC6008DBBB5 /* Task.json */,
+				377EF4C024BCBCCB008DBBB5 /* PrioritizedTask.json */,
+				3752C899238B5BBF003F16B7 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,9 +210,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377EF4BF24BCBCC7008DBBB5 /* Task.json in Resources */,
+				377EF4C124BCBCCB008DBBB5 /* PrioritizedTask.json in Resources */,
+				377EF4C324BDEF47008DBBB5 /* Tasks.json in Resources */,
 				3752C8A0238B5BBF003F16B7 /* LaunchScreen.storyboard in Resources */,
 				3752C89D238B5BBF003F16B7 /* Preview Assets.xcassets in Resources */,
 				3752C89A238B5BBF003F16B7 /* Assets.xcassets in Resources */,
+				377EF4C524BDEF50008DBBB5 /* PrioritizedTasks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,50 +27,61 @@
 /// THE SOFTWARE.
 
 import Combine
+import Foundation
 
 class TaskStore: ObservableObject {
-//    @Published var tasks = [
-//        "Read",
-//        "Finish Ray Wenderlich iOS course",
-//        "Interview prep",
-//        "Begin Udemy iOS Bootcamp",
-//        "Finish Linear Algebra Coursera course",
-//        "Poop"
-//        ].map { Task(name: $0) }
     
-    @Published var prioritizedTasks = [
-        PrioritizedTasks(
-            priority: .high,
-            names: [
-                "Finish Ray Wenderlich iOS course",
-                "Finish Linear Algebra course"
-            ]
-        ),
-        PrioritizedTasks(
-            priority: .medium,
-            names: [
-                "Interview prep"
-            ]
-        ),
-        PrioritizedTasks(
-            priority: .low,
-            names: [
-                 "Begin Udemy course"
-            ]
-        ),
-        PrioritizedTasks(
-            priority: .no,
-            names: [
-                "Read"
-            ]
-        )
-        
-    ]
+    let tasksJSONURL = URL(fileURLWithPath: "PrioritizedTasks", relativeTo: try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)).appendingPathExtension("json")
+    
+    @Published var prioritizedTasks: [PrioritizedTasks] = [
+        PrioritizedTasks(priority: .high, names: []),
+        PrioritizedTasks(priority: .medium, names: []),
+        PrioritizedTasks(priority: .low, names: []),
+        PrioritizedTasks(priority: .no, names: [])
+        ] {
+        didSet {
+            saveJSONPrioritizedTasks()
+        }
+    }
+    
+    init() {
+        loadJSONPrioritizedTasks()
+    }
     
     func getIndex(for priority: Task.Priority) -> Int {
         prioritizedTasks.firstIndex { $0.priority == priority }!
     }
     
+    private func loadJSONPrioritizedTasks() {
+//        print(Bundle.main.bundleURL)
+//        print(try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false))
+//        let tempDirectoryURL = FileManager.default.temporaryDirectory
+//        print(tempDirectoryURL)
+        
+//        print((try? FileManager.default.contentsOfDirectory(atPath: try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).path)) ?? [])
+        
+        let decoder = JSONDecoder()
+        
+        do {
+            let tasksData = try Data(contentsOf: tasksJSONURL)
+            prioritizedTasks = try decoder.decode([PrioritizedTasks].self, from: tasksData)
+        } catch {
+            print(error)
+        }
+        
+    }
+    
+    private func saveJSONPrioritizedTasks() {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        
+        do {
+            let tasksData = try encoder.encode(prioritizedTasks)
+            try tasksData.write(to: tasksJSONURL, options: .atomicWrite) // .atomicWrite writes to separate file first and when succeeded then writes to Task
+        } catch {
+            print(error)
+        }
+    }
 }
 
 
